@@ -3,3 +3,28 @@
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
+
+.btn-nominate {
+    background-color: #1476F4;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+    padding: 0.5rem 2rem;
+}
+
+.btn-view {
+    background-color: #fff;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+    padding: 0.5rem 2rem;
+    margin-right: 0.5rem;
+}
