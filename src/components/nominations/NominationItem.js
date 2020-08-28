@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../static/css/nominations/nominationItem.css";
+import { NominationContext } from "../../context/NominationContext";
 
-const NominationItem = () => {
+const NominationItem = ({ nominationItem }) => {
+    const { deleteNomination } = useContext(NominationContext);
     return (
         <div className="container nomination-item columns box">
             <div className="column">
@@ -21,7 +23,12 @@ const NominationItem = () => {
                 <h4 className="is-size-4">Year: 2012</h4>
                 <h4 className="is-size-4">Genre: Action</h4>
                 <h4 className="is-size-4"> Languages: Hindi, English</h4>
-                <button className="btn-remove">Remove</button>
+                <button
+                    className="btn-remove"
+                    onClick={() => deleteNomination(nominationItem.imdbId)}
+                >
+                    Remove
+                </button>
             </div>
         </div>
     );
