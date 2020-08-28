@@ -1,15 +1,13 @@
 import React from "react";
 import ResultItem from "./ResultItem";
 
-const searchResult = () => {
+const searchResult = ({ result }) => {
     return (
         <div className="container columns is-multiline pl-4 pt-4">
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
+            {result &&
+                result.map((item) => (
+                    <ResultItem key={item.imdbId} item={item} />
+                ))}
         </div>
     );
 };
