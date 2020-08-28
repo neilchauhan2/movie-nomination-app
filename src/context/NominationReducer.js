@@ -4,8 +4,13 @@ export default (state, action) => {
             return {
                 ...state,
                 nominations: state.nominations.filter(
-                    (nomination) => nomination.imdbId !== action.payload
+                    (nomination) => nomination.imdbID !== action.payload
                 )
+            };
+
+        case "ADD_NOMINATION":
+            return {
+                nominations: [action.payload, ...state.nominations]
             };
 
         default:

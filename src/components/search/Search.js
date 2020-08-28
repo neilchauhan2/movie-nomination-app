@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SearchResult from "./SearchResult";
+import { NominationContext } from "../../context/NominationContext";
 import axios from "axios";
 
 const Search = () => {
+    const { nominations, addNomination } = useContext(NominationContext);
+
     const [keyword, setKeyword] = useState("");
     const [result, setResult] = useState([]);
 
@@ -19,6 +22,15 @@ const Search = () => {
                     setResult(data.Search);
                 });
     };
+
+    const setStorage = () => {
+        if (nominations.length > 0)
+            localStorage.setItem("nominations", JSON.stringify(nominations));
+    };
+
+    useEffect(() => {
+        setStorage();
+    }, [nominations]);
 
     useEffect(() => {
         search();
@@ -42,7 +54,11 @@ const Search = () => {
                 </div>
             </div>
 
-            <SearchResult result={result} />
+            <SearchResult
+                result={result}
+                nominations={nominations}
+                addNomination={addNomination}
+            />
         </div>
     );
 };

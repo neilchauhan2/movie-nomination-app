@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../static/css/search/resultItem.css";
 
-const ResultItem = ({ item }) => {
+const ResultItem = ({ nominations, addNomination, item }) => {
+    const handleNominate = async (e) => {
+        if (nominations.length >= 5) {
+            console.log("Max Limit Reached");
+        } else {
+            const movie = {
+                imdbID: item.imdbID,
+                title: item.Title,
+                poster: item.Poster,
+                year: item.Year
+            };
+
+            addNomination(movie);
+        }
+    };
+
     return (
         <div className="column is-4 has-text-centered">
             {item.Poster !== "N/A" ? (
@@ -16,7 +31,9 @@ const ResultItem = ({ item }) => {
                 </h3>
             )}
             <button className="btn-view">View</button>
-            <button className="btn-nominate">Nominate</button>
+            <button className="btn-nominate" onClick={handleNominate}>
+                Nominate
+            </button>
         </div>
     );
 };
