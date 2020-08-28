@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../static/css/search/resultItem.css";
 
 const ResultItem = ({ nominations, addNomination, item }) => {
@@ -23,6 +24,7 @@ const ResultItem = ({ nominations, addNomination, item }) => {
         nominations.forEach((element) => {
             if (element.imdbID === item.imdbID) setBtnDisabled(true);
         });
+        // eslint-disable-next-line
     }, [nominations]);
 
     return (
@@ -38,7 +40,9 @@ const ResultItem = ({ nominations, addNomination, item }) => {
                     <strong>{item.Title}</strong>
                 </h3>
             )}
-            <button className="btn-view">View</button>
+            <Link to={`/movie/${item.imdbID}`} className="btn-view">
+                View
+            </Link>
             <button
                 className={
                     btnDisabled ? "btn-nominate-disabled" : "btn-nominate"

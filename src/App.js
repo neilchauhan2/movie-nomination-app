@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import Search from "./components/search/Search";
 import Navbar from "./components/layout/Navbar";
+import Home from "./components/Home";
+import Movie from "./components/Movie";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import Nominations from "./components/nominations/Nominations";
 import { NominationProvider } from "./context/NominationContext";
 
 const App = () => {
@@ -12,8 +12,10 @@ const App = () => {
             <NominationProvider>
                 <div className="App">
                     <Navbar />
-                    <Search />
-                    <Nominations />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/movie/:imdbID" component={Movie} />
+                    </Switch>
                 </div>
             </NominationProvider>
         </Router>
