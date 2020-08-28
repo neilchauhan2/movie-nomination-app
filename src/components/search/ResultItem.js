@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../static/css/search/resultItem.css";
 
 const ResultItem = ({ nominations, addNomination, item }) => {
@@ -17,6 +17,14 @@ const ResultItem = ({ nominations, addNomination, item }) => {
         }
     };
 
+    const [btnDisabled, setBtnDisabled] = useState(false);
+
+    useEffect(() => {
+        nominations.forEach((element) => {
+            if (element.imdbID === item.imdbID) setBtnDisabled(true);
+        });
+    }, [nominations]);
+
     return (
         <div className="column is-4 has-text-centered">
             {item.Poster !== "N/A" ? (
@@ -31,7 +39,13 @@ const ResultItem = ({ nominations, addNomination, item }) => {
                 </h3>
             )}
             <button className="btn-view">View</button>
-            <button className="btn-nominate" onClick={handleNominate}>
+            <button
+                className={
+                    btnDisabled ? "btn-nominate-disabled" : "btn-nominate"
+                }
+                disabled={btnDisabled}
+                onClick={handleNominate}
+            >
                 Nominate
             </button>
         </div>
