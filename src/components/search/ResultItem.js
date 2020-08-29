@@ -1,31 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../../static/css/search/resultItem.css";
+import useNomination from "../../hooks/useNomination";
 
-const ResultItem = ({ nominations, addNomination, item }) => {
-    const handleNominate = async (e) => {
-        if (nominations.length >= 5) {
-            console.log("Max Limit Reached");
-        } else {
-            const movie = {
-                imdbID: item.imdbID,
-                title: item.Title,
-                poster: item.Poster,
-                year: item.Year
-            };
-
-            addNomination(movie);
-        }
-    };
-
-    const [btnDisabled, setBtnDisabled] = useState(false);
-
-    useEffect(() => {
-        nominations.forEach((element) => {
-            if (element.imdbID === item.imdbID) setBtnDisabled(true);
-        });
-        // eslint-disable-next-line
-    }, [nominations]);
+const ResultItem = ({ item }) => {
+    const { handleNominate, btnDisabled } = useNomination(item);
 
     return (
         <div className="column is-4 has-text-centered">

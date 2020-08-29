@@ -4,7 +4,7 @@ import { NominationContext } from "../../context/NominationContext";
 import axios from "axios";
 
 const Search = () => {
-    const { nominations, addNomination } = useContext(NominationContext);
+    const { nominations } = useContext(NominationContext);
 
     const [keyword, setKeyword] = useState("");
     const [result, setResult] = useState([]);
@@ -54,11 +54,7 @@ const Search = () => {
                 </div>
             </div>
 
-            <SearchResult
-                result={result}
-                nominations={nominations}
-                addNomination={addNomination}
-            />
+            <SearchResult result={result} />
         </div>
     );
 };
