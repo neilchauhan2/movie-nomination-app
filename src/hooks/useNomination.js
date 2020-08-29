@@ -25,7 +25,7 @@ function useNomination(item) {
             if (element.imdbID === item.imdbID) setBtnDisabled(true);
         });
         // eslint-disable-next-line
-    }, [nominations]);
+    }, [nominations, item]);
     return { handleNominate, btnDisabled };
 }
 
