@@ -10,7 +10,7 @@ const Nominations = () => {
                 nominations.map((nominationItem) => (
                     <NominationItem
                         nominationItem={nominationItem}
-                        key={nominationItem.imdbID}
+                        key={nominationItem.imdbId}
                     />
                 ))
             ) : (

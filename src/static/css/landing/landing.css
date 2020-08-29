@@ -1,0 +1,28 @@
+.landing-container {
+    height: 100vh;
+    padding: 12rem 0;
+}
+
+.landing-title {
+    margin-top: 12%;
+    font-size: 76px;
+    font-weight: 700;
+}
+
+.landing-subtitle {
+    font-size: 26px;
+
+}
+
+.landing-btn {
+    background-color: #1476F4;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+    padding: 0.8rem 2rem;
+    margin-top: 1.5rem;
+}

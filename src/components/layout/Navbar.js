@@ -4,7 +4,11 @@ import "../../static/css/layout/navbar.css";
 
 const Navbar = () => {
     return (
-        <nav className="navbar " role="navigation" aria-label="main navigation">
+        <nav
+            className="navbar is-link"
+            role="navigation"
+            aria-label="main navigation"
+        >
             <div className="navbar-brand">
                 <Link className="navbar-item" to="/">
                     <h3 className="is-size-3 ml-4 mb-1">The Shoppies</h3>
@@ -26,11 +30,9 @@ const Navbar = () => {
 
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-end">
-                    <div className="navbar-item mr-4">
-                        <Link to="#">
-                            <strong>Your Nominations</strong>
-                        </Link>
-                    </div>
+                    <Link className="navbar-item" to="#">
+                        <strong>Your Nominations</strong>
+                    </Link>
                 </div>
             </div>
         </nav>

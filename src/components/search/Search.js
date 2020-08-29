@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SearchResult from "./SearchResult";
 import { NominationContext } from "../../context/NominationContext";
 import axios from "axios";
+import "../../static/css/search/search.css";
 
 const Search = () => {
     const { nominations } = useContext(NominationContext);
@@ -42,7 +43,7 @@ const Search = () => {
             <div className="field">
                 <div className="control has-icons-left has-icons-right">
                     <input
-                        className="input is-large"
+                        className="input is-large search-box"
                         type="text"
                         value={keyword}
                         onChange={handleChange}
