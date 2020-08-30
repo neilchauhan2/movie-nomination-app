@@ -1,11 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import { NominationContext } from "../context/NominationContext";
+import { toast } from "react-toastify";
 
 function useNomination(item) {
+    toast.configure();
     const { nominations, addNomination } = useContext(NominationContext);
     const handleNominate = () => {
         if (nominations.length >= 5) {
-            console.log("Max Limit Reached");
+            toast.error("You can nominate only 5 movies.");
         } else {
             const movie = {
                 imdbID: item.imdbID,
@@ -15,6 +17,9 @@ function useNomination(item) {
             };
 
             addNomination(movie);
+            toast.success(
+                `Your nomination for ${movie.title} has been successfully recorded.`
+            );
         }
     };
 

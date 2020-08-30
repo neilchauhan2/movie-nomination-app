@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import "../../static/css/nominations/nominationItem.css";
 import { NominationContext } from "../../context/NominationContext";
+import { toast } from "react-toastify";
 
 const NominationItem = ({ nominationItem }) => {
+    toast.configure();
+
     const { deleteNomination } = useContext(NominationContext);
 
     const handleDelete = async (id) => {
@@ -12,6 +15,7 @@ const NominationItem = ({ nominationItem }) => {
             return item.imdbID !== id;
         });
         localStorage.setItem("nominations", newNominations);
+        toast.error(`${nominationItem.title} removed successfully.`);
     };
 
     return (
