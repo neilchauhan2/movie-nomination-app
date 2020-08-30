@@ -20,6 +20,7 @@ const Movie = () => {
             .then((data) => {
                 setMovieItem(data);
             });
+        // eslint-disable-next-line
     }, []);
 
     return (

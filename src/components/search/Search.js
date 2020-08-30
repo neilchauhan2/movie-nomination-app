@@ -26,13 +26,9 @@ const Search = () => {
                 });
     };
 
-    const setStorage = () => {
+    useEffect(() => {
         if (nominations.length > 0)
             localStorage.setItem("nominations", JSON.stringify(nominations));
-    };
-
-    useEffect(() => {
-        setStorage();
     }, [nominations]);
 
     useEffect(() => {
