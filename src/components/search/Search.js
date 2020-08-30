@@ -44,6 +44,7 @@ const Search = () => {
                 <div className="control has-icons-left has-icons-right">
                     <input
                         className="input is-large search-box"
+                        id="search"
                         type="text"
                         value={keyword}
                         onChange={handleChange}

@@ -11,7 +11,7 @@
 
 .landing-subtitle {
     font-size: 26px;
-
+    margin-bottom: 2rem;
 }
 
 .landing-btn {
@@ -25,4 +25,8 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
     padding: 0.8rem 2rem;
     margin-top: 1.5rem;
+}
+
+.landing-btn:hover {
+    color: #fff;
 }

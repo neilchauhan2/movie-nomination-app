@@ -1,6 +1,7 @@
 import React from "react";
 import url from "../../static/img/movie.svg";
 import "../../static/css/landing/landing.css";
+import { Link as ScrollLink } from "react-scroll";
 
 const Landing = () => {
     return (
@@ -10,7 +11,14 @@ const Landing = () => {
                 <h3 className="landing-subtitle">
                     Help us find the best of movies.
                 </h3>
-                <button className="landing-btn">Nominate Now</button>
+                <ScrollLink
+                    to="search"
+                    duration={1500}
+                    smooth={true}
+                    className="landing-btn"
+                >
+                    Nominate Now
+                </ScrollLink>
             </div>
             <div className="column is-4">
                 <img src={url} alt="landing-img" />
