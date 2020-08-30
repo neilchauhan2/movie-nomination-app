@@ -57,7 +57,7 @@ const Movie = () => {
                                 : "btn-nominate"
                         }
                         disabled={btnDisabled}
-                        onChange={handleNominate}
+                        onClick={handleNominate}
                     >
                         Nominate
                     </button>

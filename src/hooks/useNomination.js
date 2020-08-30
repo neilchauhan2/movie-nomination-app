@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { NominationContext } from "../context/NominationContext";
 import { toast } from "react-toastify";
 
-function useNomination(item) {
+const useNomination = (item) => {
     toast.configure();
     const { nominations, addNomination } = useContext(NominationContext);
     const handleNominate = () => {
@@ -32,6 +32,6 @@ function useNomination(item) {
         // eslint-disable-next-line
     }, [nominations, item]);
     return { handleNominate, btnDisabled };
-}
+};
 
 export default useNomination;
