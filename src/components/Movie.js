@@ -14,7 +14,7 @@ const Movie = () => {
     useEffect(() => {
         axios
             .get(
-                `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${imdbID}`
+                `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${imdbID}`
             )
             .then((res) => res.data)
             .then((data) => {
