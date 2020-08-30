@@ -17,7 +17,9 @@ const Search = () => {
     const search = () => {
         if (keyword.length >= 3)
             axios
-                .get(`http://www.omdbapi.com/?apikey=e8cf6a21&s=${keyword}`)
+                .get(
+                    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${keyword}`
+                )
                 .then((res) => res.data)
                 .then((data) => {
                     setResult(data.Search);
